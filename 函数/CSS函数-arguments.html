@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title></title>
+<script>
+//类似jQ的直接使用.css来设置和获取，如[$abc.css('color','red') or $abc.css()]。
+//判断arguments.length
+//给参数取名，增强可读性
+
+//封装 currentStyle函数。兼容问题
+function getStyle(boj,attr)
+{
+	if(obj.currentStyle)  //current在IE下返回的是对象，而在FF下返回的是undefined，通过这个来判断浏览器
+	{
+		return obj.currentStyle[attr];
+	}else{
+		return getComputedStyle(obj,false)[attr];
+	}
+}
+
+function css(obj,attr,value){
+	if(arguments.length==2)  //获取css属性
+	{
+		//return getStyle(arguments[0],arguments[1]);
+		return getStyle(obj,attr);
+	}
+	else if(arguments.length==3) //设置css属性
+	{
+		//arguments[0].style[arguments[1]]=arguments[2];
+		obj.style[attr]=value;
+	}
+}
+window.onload=function()
+{
+	var oBtn=document.getElementById('btn1');
+	var oDiv=document.getElementById('div1');
+
+	oBtn.onclick=function()
+	{
+		//css(oDiv,'background','green');
+		alert(css(oDiv,'width'))
+	}
+}
+</script>
+</head>
+<body>
+<input type="button" value="设置" id="btn1">
+<div id="div1">
+	
+</div>
+</body>
+</html>
