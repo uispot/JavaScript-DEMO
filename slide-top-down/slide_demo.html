@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<<<<<<< HEAD
+<title>图片上下滑动 - 妙味课堂 - www.miaov.com</title>
+=======
+<title>图片上下滑动</title>
+>>>>>>> slide
+
+<style type="text/css">
+* { padding: 0; margin: 0; }
+li { list-style: none; }
+img { border: none; }
+body { background: #eee; }
+.slide_module { width: 120px; height: 400px; margin: 0 auto; background: #fff; border: 1px solid #ccc; position: relative; top: 50px; }
+.slide_module .up { width: 27px; height: 27px; background: url(images/up.gif) no-repeat; position: absolute; top: 4px; left: 50%; margin-left: -16px; cursor: pointer; filter: alpha(opacity: 60); opacity: 0.6; }
+.slide_module .down { width: 27px; height: 27px; background: url(images/down.gif) no-repeat; position: absolute; bottom: 4px; left: 50%; margin-left: -16px; cursor: pointer; filter: alpha(opacity: 60); opacity: 0.6; }
+.slide_module .wrap { width: 120px; height: 330px; position: absolute; top: 35px; left: 0; overflow: hidden; }
+.slide_module ul { width: 120px; position: absolute; top: 0; left: 0; }
+.slide_module li { width: 120px; height: 110px; float: left; }
+.slide_module a { display: block; width: 100px; height: 100px; border: 1px solid red; margin: 0 auto; position: relative; top: 4px; }
+.slide_module a:hover { border: 1px solid #333; }
+.slide_module .active { border: 10px solid #000; }
+</style>
+<script type="text/javascript">
+window.onload = function()
+{
+<<<<<<< HEAD
+    var oDiv = document.getElementById("miaovSlide");
+=======
+    var oDiv = document.getElementById("uispotSlide");
+>>>>>>> slide
+    var oUl = oDiv.getElementsByTagName("ul")[0];
+    var aLi = oUl.getElementsByTagName("li");
+    var oUp = oDiv.getElementsByTagName("div")[0];
+    var oDown = oDiv.getElementsByTagName("div")[2];
+    var timer = null;
+    var iSpeed = 0;
+
+    oUl.innerHTML += oUl.innerHTML;
+
+    oUp.onmousedown = function()
+    {
+        timer = setInterval(doMove,30);
+        iSpeed = -5;
+    }
+    oUp.onmouseup = function()
+    {
+        clearInterval(timer);
+    }
+
+    oDown.onmousedown = function()
+    {
+        timer = setInterval(doMove,30);
+        iSpeed = 5;
+    }
+    oDown.onmouseup = function()
+    {
+        clearInterval(timer);
+    }
+
+    function doMove()
+    {
+        oUl.style.top = oUl.offsetTop + iSpeed + 'px';
+        if(oUl.offsetTop < -oUl.offsetHeight/2)
+        {
+            oUl.style.top = '0px';
+        }else if(oUl.offsetTop > 0)
+        {
+            oUl.style.top = -oUl.offsetHeight/2 + 'px';
+        }
+    }
+};
+</script>
+</head>
+
+<body>
+
+<<<<<<< HEAD
+<div class="slide_module" id="miaovSlide">
+    <div class="up"></div>
+    <div class="wrap">
+        <ul>
+            <li><a href="http://www.miaov.com"><img src="images/1.jpg" alt="妙味课堂" longdesc="http://www.miaov.com" /></a></li>
+            <li><a href="http://www.miaov.com"><img src="images/2.jpg" alt="妙味课堂" longdesc="http://www.miaov.com" /></a></li>
+            <li><a href="http://www.miaov.com"><img src="images/3.jpg" alt="妙味课堂" longdesc="http://www.miaov.com" /></a></li>
+            <li><a href="http://www.miaov.com"><img src="images/4.jpg" alt="妙味课堂" longdesc="http://www.miaov.com" /></a></li>
+=======
+<div class="slide_module" id="uispotSlide">
+    <div class="up"></div>
+    <div class="wrap">
+        <ul>
+            <li><a href="http://www.uispot.com"><img src="images/1.jpg" alt="优艾点[UiSpot.Com]" longdesc="http://www.uispot.com" /></a></li>
+            <li><a href="http://www.uispot.com"><img src="images/2.jpg" alt="优艾点[UiSpot.Com]" longdesc="http://www.uispot.com" /></a></li>
+            <li><a href="http://www.uispot.com"><img src="images/3.jpg" alt="优艾点[UiSpot.Com]" longdesc="http://www.uispot.com" /></a></li>
+            <li><a href="http://www.uispot.com"><img src="images/4.jpg" alt="优艾点[UiSpot.Com]" longdesc="http://www.uispot.com" /></a></li>
+>>>>>>> slide
+        </ul>
+    </div>
+    <div class="down"></div>
+</div>
+
+</body>
+</html>
